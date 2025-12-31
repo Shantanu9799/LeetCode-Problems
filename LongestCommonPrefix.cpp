@@ -1,3 +1,22 @@
+// Approach 1
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        sort(strs.begin(), strs.end());
+        int i = 0, n = strs[0].size(), m = strs[strs.size() - 1].size();
+        string firstString = strs[0], lastString = strs[strs.size() - 1], longCommonPref = "";
+        while(i < n && i < m) {
+            if(firstString[i] == lastString[i]) longCommonPref += firstString[i];
+            else break;
+            i++;
+        }
+        return longCommonPref;
+    }
+};
+
+
+
+// Approach 2
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
